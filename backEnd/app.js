@@ -20,6 +20,13 @@ app.use(cors({
 }));
 
 
+app.use("/",(req,res) => {
+  res.status(200).json({
+    success : true,
+    message : "Welcome to Restaurant Reservation API"
+  })
+})
+
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
