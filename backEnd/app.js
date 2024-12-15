@@ -14,14 +14,17 @@ app.use(express.urlencoded({extended: true}))
 
 app.use(cors({
   origin: [
-    'https://project-restaurant-reservation.vercel.app',
-    'https://project-book-sphere.vercel.app',
-    process.env.FRONTEND_URL
+    'https://project-restaurant-reservation-frontend.vercel.app', // Replace with your actual frontend URL
+    'https://project-restaurant-reservation.vercel.app', // Keep this if needed
+    process.env.FRONTEND_URL // Ensure this is set correctly in your .env file
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   credentials: true,
-  allowedHeaders: ['Content-Type']
+  allowedHeaders: ['Content-Type', 'Authorization'], // Include 'Authorization' if you're using tokens
 }));
+
+
+
 
 // Database Connection
 dbConnection()
