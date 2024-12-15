@@ -2,24 +2,18 @@
   "version": 2,
   "builds": [
     {
-      "src" : "*.js",
-      "use" :"@vercel/node"
+      "src": "src/index.js",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
     }
   ],
   "routes": [
-   {
-    "src" : "/(.*)",
-    "dest" : "/"
-   }
-  ],
-  "rewrites": [
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+    "rewrites": [
+  { "source": "/(.*)", "destination": "/index.html" }
+]
     }
-  ],
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist",
-  "framework": "vite",
-  "cleanUrls": true
+  ]
 }
