@@ -1,5 +1,5 @@
-import  app  from './app.js';
+import app from './app.js';
 
-const PORT = process.env.PORT || 4001
+const PORT = process.env.PORT || 4001;
 
-app.listen(PORT, (req,res)=> console.log('server started... on port ' , PORT));
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
