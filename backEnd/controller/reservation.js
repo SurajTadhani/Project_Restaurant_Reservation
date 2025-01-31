@@ -1,5 +1,8 @@
 import ErrorHandler from "../error/error.js";
+import { sendMail } from "../helpers/sendMail.js";
 import { Reservation } from "../models/reservationSchema.js";
+import { getThankYouEmail } from "../helpers/getThankYouEmail .js";
+
 
 
 const send_reservation = async (req, res, next) => {
@@ -10,20 +13,26 @@ const send_reservation = async (req, res, next) => {
 
   try {
     await Reservation.create({ firstName, lastName, email, date, time, phone });
+
     res.status(201).json({
       success: true,
       message: "Reservation Sent Successfully!",
     });
-  } catch (error) {
-    // Handle Mongoose validation errors
+
+   
+    const userName = firstName + " " + lastName;
+    sendMail(email, "Thank You For Reservation", "", getThankYouEmail(userName,date,time))
+        .catch(err => console.error("Email Sending Error:", err));
+
+} catch (error) {
     if (error.name === 'ValidationError') {
       const validationErrors = Object.values(error.errors).map(err => err.message);
       return next(new ErrorHandler(validationErrors.join(', '), 400));
     }
-
-    // Handle other errors
     return next(error);
-  }
+}
+
+
 };
 
 

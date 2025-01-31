@@ -3,15 +3,15 @@ import { data } from '../restApi.json'
 
 function Who_We_Are() {
   return (
-    <>
+    <div className='dark:bg-black '>
     <div className='container flex flex-col lg:flex-row justify-between items-center py-40 gap-20'>
      <div className='space-y-48'>
         {
            data[0].who_we_are.slice(0,2).map(element => (
             <div className='' key={element.id}>
              <div className='space-y-5'>
-             <h1 className='text-6xl text-black text-center animate-bounce'>{element.number}</h1>
-             <p className='text-3xl text-black text-center'>{element.title}</p>
+             <h1 className='text-6xl text-black text-center animate-bounce dark:text-white'>{element.number}</h1>
+             <p className='text-3xl text-black text-center dark:text-white'>{element.title}</p>
              </div>
             </div>
            ))
@@ -27,15 +27,15 @@ function Who_We_Are() {
         data[0].who_we_are.slice(2).map(element => (
           <div className='' key={element.id}>
           <div className='space-y-5'>
-          <h1 className='text-6xl text-black text-center animate-bounce'>{element.number}</h1>
-          <p className='text-3xl text-black text-center'>{element.title}</p>
+          <h1 className='text-6xl text-black text-center animate-bounce dark:text-white'>{element.number}</h1>
+          <p className='text-3xl text-black text-center dark:text-white'>{element.title}</p>
           </div>
          </div>
         ))
       }
     </div>
     </div>
-    </>
+    </div>
   )
 }
 

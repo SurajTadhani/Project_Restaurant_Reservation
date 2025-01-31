@@ -25,10 +25,10 @@ function Reservation() {
       toast.error("All fields are required!");
       return;
     }
-  
+    
     try {
       const { data } = await axios.post(
-        "https://project-restaurant-reservation.vercel.app/api/v1/reservation/send",
+        "http://localhost:6200/api/v1/reservation/send",
         { firstName, lastName, email, phone, date, time },
         {
           headers: {
@@ -59,170 +59,117 @@ function Reservation() {
   
 
   return (
-    <>
+    <div className="dark:bg-black ">
       <div className="flex flex-col lg:flex-row py-52">
         <div className="lg:w-1/2 flex justify-center items-center">
           <img className="md:w-[500px]" src="/reservation.png" alt="res" />
         </div>
 
         <div className="flex justify-center shadow-2xl shadow-pink-200">
-          <form className="border-2 px-16 py-20 space-y-10">
-            <div className="flex justify-between space-x-5">
-              <div>
-                <label className="text-xl text-black" htmlFor="firstName">
-                  First Name :{" "}
-                </label>
+        <form className="border-2 px-16 py-24 space-y-10">
+  <div className="flex flex-col space-y-10">
+   <div className="grid grid-cols-2 gap-5">
+   <div>
+      <label className="text-xl text-black dark:text-white" htmlFor="firstName">
+        First Name :
+      </label>
+      <input
+        type="text"
+        placeholder="First Name"
+        value={firstName}
+        className="bg-white text-black  border-b-2 border-black px-4 py-2 w-full"
+        onChange={(e) => setFirstName(e.target.value)}
+      />
+    </div>
 
-                <input
-                  type="text"
-                  placeholder="First Name"
-                  value={firstName}
-                  className="bg-white text-black border-b-2 border-black px-4"
-                  onChange={(e) => setFirstName(e.target.value)}
-                />
-              </div>
-              <div>
-                <label className="text-xl text-black" htmlFor="lastName">
-                  Last Name :{" "}
-                </label>
+    <div>
+      <label className="text-xl text-black dark:text-white" htmlFor="lastName">
+        Last Name :
+      </label>
+      <input
+        type="text"
+        className="bg-white text-black border-b-2 border-black px-4 py-2 w-full"
+        placeholder="Last Name"
+        value={lastName}
+        onChange={(e) => setLastName(e.target.value)}
+      />
+    </div>
 
-                <input
-                  type="text"
-                  className="bg-white text-black border-b-2 border-black px-4"
-                  placeholder="Last Name"
-                  value={lastName}
-                  onChange={(e) => setLastName(e.target.value)}
-                />
-              </div>
-            </div>
-            <div className="flex space-x-12 ">
-              <div>
-                <label className="text-xl text-black pe-5" htmlFor="date">
-                  Date :{" "}
-                </label>
+   </div>
+   <div className="grid grid-cols-2 gap-5">
+   <div>
+      <label className="text-xl text-black dark:text-white pe-5" htmlFor="date">
+        Date :
+      </label>
+      <input
+        type="date"
+        placeholder="Date"
+        className="bg-white text-black border-b-2 border-black px-4 py-2 w-full cursor-pointer"
+        value={date}
+        onChange={(e) => setDate(e.target.value)}
+      />
+    </div>
 
-                <div className="relative inline-flex items-center">
-                  <input
-                    type="date"
-                    placeholder="Date"
-                    className="bg-white text-black border-b-2 border-black px-10 pr-10"
-                    value={date}
-                    onChange={(e) => setDate(e.target.value)}
-                  />
-                  
-                </div>
-              </div>
-              <div>
-                <label className="text-xl text-black pe-5" htmlFor="time">
-                  Time :{" "}
-                </label>
+    <div>
+      <label className="text-xl text-black dark:text-white pe-5" htmlFor="time">
+        Time :
+      </label>
+      <input
+        type="time"
+        placeholder="Time"
+        className="bg-white text-black border-b-2 border-black px-4 py-2 w-full cursor-pointer"
+        value={time}
+        onChange={(e) => setTime(e.target.value)}
+      />
+    </div>
 
-                <div className="relative inline-flex items-center">
-                  <input
-                    type="time"
-                    placeholder="Time"
-                    className="bg-white text-black border-b-2 border-black px-16 pr-10"
-                    value={time}
-                    onChange={(e) => setTime(e.target.value)}
-                  />
-                 
-                </div>
-              </div>
-            </div>
-            <div className="flex space-x-12">
-              <div>
-                <label className="text-xl text-black pe-5" htmlFor="email">
-                  Email :{" "}
-                </label>
+   </div>
+   <div className="grid grid-cols-2 gap-5">
+   <div>
+      <label className="text-xl text-black dark:text-white pe-5" htmlFor="email">
+        Email :
+      </label>
+      <input
+        type="email"
+        placeholder="Enter Email"
+        className="bg-white text-black border-b-2 border-black px-4 py-2 w-full"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+    </div>
 
-                <input
-                  type="email"
-                  placeholder="Enter Email"
-                  className="bg-white text-black border-b-2 border-black px-5"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </div>
-              <div>
-                <label className="text-xl text-black pe-5" htmlFor="phone">
-                  Phone :{" "}
-                </label>
+    <div>
+      <label className="text-xl text-black dark:text-white pe-5" htmlFor="phone">
+        Phone :
+      </label>
+      <input
+        type="number"
+        className="bg-white text-black border-b-2 border-black px-4 py-2 w-full"
+        placeholder="Enter Number"
+        value={phone}
+        onChange={(e) => setPhone(e.target.value)}
+      />
+    </div>
+   </div>
+  </div>
 
-                <input
-                  type="number"
-                  className="bg-white text-black border-b-2 border-black px-7"
-                  placeholder="Enter Number"
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                />
-              </div>
-            </div>
-            <button
-              onClick={handleReservation}
-              type="submit"
-              className="flex items-center border px-10 py-2 rounded-xl hover:bg-black hover:text-white text-black border-black duration-500"
-            >
-              RESERVE NOW
-              <span className="ml-2">
-                <HiOutlineArrowNarrowRight />
-              </span>
-            </button>
-          </form>
+  <button
+    onClick={handleReservation}
+    type="submit"
+    className="flex items-center border px-10 py-2 rounded-xl hover:bg-black hover:text-white text-black border-black duration-500 mt-5 dark:text-white dark:border-white"
+  >
+    RESERVE NOW
+    <span className="ml-2">
+      <HiOutlineArrowNarrowRight />
+    </span>
+  </button>
+</form>
 
-          {/* <form>
-              <div>
-                <input
-                  type="text"
-                  placeholder="First Name"
-                  value={firstName}
-                  onChange={(e) => setFirstName(e.target.value)}
-                />
-                <input
-                  type="text"
-                  placeholder="Last Name"
-                  value={lastName}
-                  onChange={(e) => setLastName(e.target.value)}
-                />
-              </div>
-              <div>
-                <input
-                  type="date"
-                  placeholder="Date"
-                  value={date}
-                  onChange={(e) => setDate(e.target.value)}
-                />
-                <input
-                  type="time"
-                  placeholder="Time"
-                  value={time}
-                  onChange={(e) => setTime(e.target.value)}
-                />
-              </div>
-              <div>
-                <input
-                  type="email"
-                  placeholder="Email"
-                  className="email_tag"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-                <input
-                  type="number"
-                  placeholder="Phone"
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                />
-              </div>
-              <button type="submit" onClick={handleReservation}>
-                RESERVE NOW{" "}
-                <span>
-                  <HiOutlineArrowNarrowRight />
-                </span>
-              </button>
-            </form> */}
+
+         
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

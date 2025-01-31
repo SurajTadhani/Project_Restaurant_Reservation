@@ -7,8 +7,9 @@ import { Link } from "react-router-dom";
 
 function About() {
   return (
-    <div className="bg-[#f9fbf2] dark:bg-black dark:text-white py-32 container">
-      <div className="flex justify-between items-center container flex-col md:flex-row gap-10">
+  <div className="dark:bg-black dark:text-white">
+      <div className="bg-[#f9fbf2]  py-32 container dark:bg-black dark:text-white">
+      <div className="flex justify-between items-center flex-col md:flex-row gap-10">
         <div className="md:w-1/2 space-y-10">
          <div className="space-y-4">
          <h1 className="font-thin dark:text-white text-black text-6xl">ABOUT US</h1>
@@ -25,9 +26,16 @@ function About() {
             accusantium repellat mollitia repellendus.
           </p>
           <button>
-          <Link to='/menu' className="btn rounded-3xl  bg-white dark:text-black dark:bg-white text-black hover:bg-black hover:text-white duration-500 flex items-center text-base px-5">
-      Explore Menu <FontAwesomeIcon icon={faArrowRight} className="ml-2" />
-    </Link>
+          <Link 
+  to="/menu" 
+  className="btn rounded-3xl bg-white text-black dark:bg-black dark:text-white 
+             group duration-500 flex items-center text-base px-5 
+             hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black"
+>
+  Explore Menu <FontAwesomeIcon icon={faArrowRight} className="ml-2 group-hover:translate-x-1 transition-transform" />
+</Link>
+
+
           </button>
         </div>
         <div className="md:w-1/2 overflow-clip">
@@ -74,6 +82,7 @@ function About() {
         </div>
       </div>
     </div>
+  </div>
   );
 }
 

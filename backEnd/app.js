@@ -6,7 +6,7 @@ import { errorMiddleware } from './error/error.js';
 import reservationRouter from './routes/reservation.route.js';
 
 const app = express();
-dotenv.config({ path : "./config/config.env"})
+dotenv.config()
 
 // Middleware
 app.use(express.json())
@@ -14,7 +14,7 @@ app.use(express.urlencoded({extended: true}))
 
 app.use(cors({
   origin: [
-    'https://project-restaurant-reservation-frontend.vercel.app',
+    'http://localhost:5174',
   
   
   ],

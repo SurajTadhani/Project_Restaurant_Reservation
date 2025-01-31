@@ -5,15 +5,16 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "start" : "nodemon server.js"
+    "start": "nodemon server.js"
   },
   "author": "Suraj Tadhani",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
-    "dotenv": "^16.4.5",
+    "dotenv": "^16.4.7",
     "express": "^4.19.2",
     "mongoose": "^8.4.4",
+    "nodemailer": "^6.10.0",
     "nodemon": "^3.1.4",
     "validator": "^13.12.0"
   }

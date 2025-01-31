@@ -15,6 +15,7 @@ import { Toaster } from 'react-hot-toast'
 import Success from './components/Success'
 import NotFound from './components/NotFound'
 
+
 const router = createBrowserRouter([
   {
     path:'',

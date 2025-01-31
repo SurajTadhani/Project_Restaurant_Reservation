@@ -3,7 +3,8 @@ import { NavLink } from 'react-router-dom'
 
 const Footer = () => {
   return (
-    <footer className="footer footer-center bg-base-200 text-base-content rounded p-10 container">
+    <div className="dark:bg-black ">
+      <footer className="footer footer-center bg-base-200 text-base-content rounded p-10 container dark:bg-black dark:text-white dark:border">
       <nav className="grid grid-flow-col gap-4">
      
         <ul className="flex gap-8">
@@ -62,26 +63,9 @@ const Footer = () => {
         </p>
       </aside>
     </footer>
+    </div>
 
-    // <footer>
-    //   <div className="">
-    //     <div className="container flex justify-center items-center">
-    //       <div className="">Dreamcatcher</div>
-    //       <div className="">
-    //         <p>02 , NIKOL , AHMEDABAD</p>
-    //         <p>Open: 05:00 PM - 12:00 AM</p>
-    //       </div>
-    //     </div>
-    //     <div className="container flex justify-center items-center">
-    //       <div>
-    //         <p>Developed By SurajTadhani</p>
-    //       </div>
-    //       <div>
-    //         <p>All Rights Reserved By SurajTadhani</p>
-    //       </div>
-    //     </div>
-    //   </div>
-    // </footer>
+
   );
 };
 

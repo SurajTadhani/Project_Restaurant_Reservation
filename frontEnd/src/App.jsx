@@ -1,6 +1,4 @@
-import { useState } from 'react'
-import Navbar from './components/Navbar'
-import Footer from './components/Footer'
+
 import HeroSection from './components/HeroSection'
 import About from './components/About'
 import Foods from './components/Foods'
@@ -13,6 +11,7 @@ import { Route, Routes } from 'react-router-dom'
 import Layout from './components/Layout'
 import Success from './components/Success'
 import NotFound from './components/NotFound'
+
 
 
 function App() {
