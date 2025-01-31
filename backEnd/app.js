@@ -13,14 +13,9 @@ app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
 app.use(cors({
-  origin: [
-    'https://project-restaurant-reservation-backend.vercel.app/',
-  
-  
-  ],
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  credentials: true,
-  allowedHeaders: ['Content-Type', 'Authorization'], 
+  origin: "https://project-restaurant-reservation.vercel.app", // Allow your frontend
+  methods: "GET,POST,PUT,DELETE",
+  credentials: true // Allow cookies and authentication headers
 }));
 
 
