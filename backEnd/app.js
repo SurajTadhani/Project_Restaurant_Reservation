@@ -14,7 +14,7 @@ app.use(express.urlencoded({extended: true}))
 
 app.use(cors({
   origin: [
-    'http://localhost:5174',
+    'https://project-restaurant-reservation-backend.vercel.app/',
   
   
   ],
