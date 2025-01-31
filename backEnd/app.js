@@ -30,7 +30,7 @@ app.use(cors({
 dbConnection()
 
 // Routes
-app.use('/api/v1/reservation', reservationRouter)
+app.use('/v1/reservation', reservationRouter)
 
 // Welcome route
 app.get("/", (req,res) => {
